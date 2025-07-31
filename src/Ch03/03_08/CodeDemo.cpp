@@ -8,8 +8,8 @@
 double my_average(int a, int8_t b, uint32_t c){
     double result = 0.0;
 
-    // Write your code here
-    
+    result = ((double) a + (double) b + (double) c) / 3;
+    // If i hadn't casted the variables to double, I would need to divide by 3.0 to ensure the result is a double
     return result;
 }
 
