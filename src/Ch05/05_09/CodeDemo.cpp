@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cstdint>
 #include <vector>
+#include <string>
 
 struct Resource{
     std::string name;
@@ -12,23 +13,28 @@ struct Resource{
     char type; // 'B' for Basic, 'L' for Luxury, 'E' for Essential
 };
 
-double CalculateTotalCost(std::vector<Resource> resources){
-    double result = 0.0;
-    
-    // Write your code here
-    
-    return result;
-}
-
-int main(){
-    
-    // Example 1 resources
-    std::vector<Resource> resources = {
+std::vector<Resource> resources = {
         {"Wood", 125.0, 'B'},
         {"Gold", 200.0, 'L'},
         {"Water", 50.0, 'E'}
     };
 
+double CalculateTotalCost(std::vector<Resource> resources){
+    double result = 0.0;
+    for (const auto& resource : resources)
+    {    
+        double CostWithTax = resource.baseCost;
+        if (resource.type == 'L')
+            CostWithTax += resource.baseCost*0.15;
+        else if (resource.type == 'B')
+            CostWithTax += resource.baseCost*0.05;   
+        result += CostWithTax;
+    }
+    return result;
+}
+
+int main()
+{
     double learnerResult = CalculateTotalCost(resources);
     
     std::cout << "Your code returned: " << learnerResult << std::endl;
