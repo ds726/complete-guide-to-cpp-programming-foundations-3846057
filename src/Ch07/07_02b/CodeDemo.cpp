@@ -6,6 +6,11 @@
 #include <vector>
 #include <string>
 
+class Inventory{
+private:
+    std::vector<std::string> *items;
+    int capacity;
+};
 int main(){
     
     std::cout << std::endl << std::endl;
