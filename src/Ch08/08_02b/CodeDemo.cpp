@@ -7,7 +7,7 @@
 
 // Template function to calculate the size in bits of a given data type
 template <typename T>
-int size_in_bits(T a) {
+int size_in_bits(T a) { //T is a placeholder for any data type
     return sizeof(a) * 8;
 }
 
@@ -16,7 +16,11 @@ int main(){
     std::cout << size_in_bits('f') << std::endl;   // Character
     std::cout << size_in_bits(32.1f) << std::endl; // Float
     std::cout << size_in_bits(32.1) << std::endl;  // Double
-    
+    std::cout << "===========================" << std::endl;
+    std::cout << size_in_bits((short)42) << std::endl; // Short
+    std::cout << size_in_bits(123456789L) << std::endl; // Long
+    std::cout << size_in_bits(std::string("Hello")) << std::endl; // String
+    std::cout << size_in_bits(true) << std::endl; // Boolean
     std::cout << std::endl << std::endl;
     return 0;
 }

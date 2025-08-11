@@ -19,7 +19,9 @@ int main(){
     GameEntity<int> enemy(10, 20);  // Position with integers
     std::cout << "Enemy ";
     enemy.printPosition();
-
+    GameEntity<float> treasure(12.5f, 7.8f);
+    std::cout << "Treasure ";
+    treasure.printPosition();
     std::cout << std::endl << std::endl;
     return 0;
 }
